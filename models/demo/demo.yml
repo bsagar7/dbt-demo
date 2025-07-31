@@ -1,0 +1,36 @@
+version: 2
+
+
+
+models: 
+  - name : employee
+    description: DBT model for Employee Table
+    columns:
+      - name: emp_id
+        tests:
+          - unique
+          - not_null
+      - name: emp_state
+        tests:
+          - accepted_values:
+              values: ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA","HI", 
+                      "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD","MA", "MI", 
+                      "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ","NM", "NY", "NC", 
+                      "ND", "OH", "OK", "OR", "PA", "RI", "SC","SD", "TN","TX", "UT", 
+                      "VT", "VA", "WA", "WV", "WI", "WY"]
+              config:
+                severity: warn
+      - name: salary
+        tests: 
+          - check_value
+
+      
+
+
+
+sources:
+  - name: employee
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: EMPLOYEE_RAW
