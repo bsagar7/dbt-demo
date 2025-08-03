@@ -24,6 +24,17 @@ models:
         tests: 
           - check_value
 
+  - name: performance
+    description: DBT model for Performance Review
+
+  - name: top_performers
+    description: DBT model for top performers
+
+  - name: sales
+    description: DBT model for sales table
+
+  - name: product
+    description: DBT table for product table
       
 
 
@@ -34,3 +45,21 @@ sources:
     schema: PUBLIC
     tables:
       - name: EMPLOYEE_RAW
+
+  - name: performance
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PERFORMANCE_REVIEW_SRC
+
+  - name: sales
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: SALES_SRC
+
+  - name: product
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PRODUCT_SRC
