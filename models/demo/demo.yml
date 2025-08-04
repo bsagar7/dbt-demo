@@ -42,6 +42,9 @@ models:
   - name: clean_orders
     description: DBT model for Cleaning Orders Raw Table (Ephemeral Model)
 
+  - name: patient
+    description: DBT model for Patient (Snapshot Demo)
+
 
 sources:
   - name: employee
@@ -79,3 +82,11 @@ sources:
     schema: PUBLIC
     tables:
       - name: ORDERS_RAW
+
+  - name: patient
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PATIENT_SRC
+
+      
