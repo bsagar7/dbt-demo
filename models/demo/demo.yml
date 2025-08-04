@@ -48,6 +48,9 @@ models:
   - name: covid
     description: DBT model for Covid stats Country code col addition (DBT Seed) 
 
+  - name: concat_name
+    description: DBT model for Concat_name (Macros)
+
 
 sources:
   - name: employee
