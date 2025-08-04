@@ -44,6 +44,9 @@ models:
 
   - name: patient
     description: DBT model for Patient (Snapshot Demo)
+  
+  - name: covid
+    description: DBT model for Covid stats Country code col addition (DBT Seed) 
 
 
 sources:
@@ -89,4 +92,8 @@ sources:
     tables:
       - name: PATIENT_SRC
 
-      
+  - name: covid
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: COVID_STATS_SRC
