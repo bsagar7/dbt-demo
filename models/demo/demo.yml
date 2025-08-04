@@ -34,9 +34,13 @@ models:
     description: DBT model for sales table
 
   - name: product
-    description: DBT table for product table
+    description: DBT model for product table (delete+insert Operation)
       
+  - name: purchase
+    description: DBT model for purchase table (Merge Operation)
 
+  - name: clean_orders
+    description: DBT model for Cleaning Orders Raw Table (Ephemeral Model)
 
 
 sources:
@@ -63,3 +67,15 @@ sources:
     schema: PUBLIC
     tables:
       - name: PRODUCT_SRC
+
+  - name: purchase
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PURCHASE_SRC
+
+  - name: clean_orders
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: ORDERS_RAW
