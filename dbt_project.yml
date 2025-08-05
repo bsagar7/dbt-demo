@@ -40,3 +40,22 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
+
+    # Project level database and schema 
+    project1:
+      bronze:
+        database: DBT_PROJECT1_DB
+        schema: BRONZE
+
+      silver:
+        database: DBT_PROJECT1_DB
+        schema: SILVER
+
+    project2:
+      raw:
+        database: DBT_PROJECT2_DB
+        schema: raw
+
+      mart:
+        database: DBT_PROJECT2_DB
+        schema: mart
